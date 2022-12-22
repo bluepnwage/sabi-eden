@@ -1,15 +1,29 @@
 <script lang="ts">
-  import { Counter } from "$lib";
   import Services from "./Services.svelte";
   import Fruits from "./Fruits.svelte";
   import Products from "./Products.svelte";
   import "../app.css";
+
+  //assets
+  import mainBg from "$lib/assets/main-lg.jpg";
+  import apples from "$lib/assets/apples-lg.jpg";
+  import blueberries from "$lib/assets/blueberries-lg.jpg";
+  import farmer from "$lib/assets/farmer-2-lg.jpg";
+  import logo from "$lib/assets/logo.png";
 </script>
 
-<section class="h-screen bg-indigo-900 flex flex-col px-36 justify-center mb-36">
+<svelte:head>
+  <title>Sabi's Eden</title>
+</svelte:head>
+
+<section class="h-screen bg--black flex flex-col px-36 relative justify-center mb-36">
+  <div class="absolute top-0 left-0 bg-black -z-10 w-full h-full">
+    <img src={mainBg} alt="" class="opacity-50  w-full h-full" />
+  </div>
+
   <div class="w-3/5">
-    <div class="h-36 w-36 rounded-full border-2 mb-10 flex items-center justify-center border-gray-100" />
-    <h1 class="font-serif  text-8xl text-white mb-2">Organic</h1>
+    <img src={logo} alt="" width="200" height="auto" />
+    <h1 class="font-serif  text-8xl text-white my-2">Organic</h1>
     <hr class="h-2 bg-white w-full mb-10" />
     <p class="text-white text-2xl mb-10">
       A selection of fresh, seasonal produce delivered straight <br /> to your door.
@@ -39,7 +53,10 @@
   </header>
   <Products />
 </section>
-<section class="bg-indigo-800 px-36 py-10 ">
+<section class="px-36 py-10 relative">
+  <div class="absolute bg-black -z-10 top-0 left-0 w-full h-full">
+    <img class="w-full h-full object-cover opacity-30" src={apples} alt="" />
+  </div>
   <h2 class="text-white font-serif text-8xl mb-10">Wholesale</h2>
   <p class="w-3/5 text-gray-100 text-4xl leading-relaxed mb-10">
     To qualify for wholesale pricing you must buy from us in bulk quantities. For some customers that might be a pallet
@@ -57,7 +74,10 @@
   </header>
   <Fruits />
 </section>
-<section class="px-36 py-10 bg-indigo-800 mb-48">
+<section class="px-36 py-10 relative mb-48">
+  <div class="absolute top-0  -z-10 left-0 w-full h-full bg-black">
+    <img src={blueberries} alt="" class="w-full opacity-50 h-full object-cover" />
+  </div>
   <header class="w-3/5 mb-10">
     <h2 class="capitalize font-serif text-7xl text-white mb-10">Contact us</h2>
     <p class="text-4xl text-gray-100 leading-relaxed">
@@ -81,10 +101,44 @@
     <div class="absolute -top-16  right-0 -z-10 bg-gray-200 h-96 w-[42%]" />
   </header>
 </section>
-<section class="bg-indigo-800 h-96 w-full" />
+<section class="w-full farmer-image">
+  <img src={farmer} alt="" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+</section>
+<footer class="py-16 flex flex-col border-t items-center">
+  <div class="w-4/5 flex justify-between">
+    <p class="text-gray-500 text-lg">© 2022, Sabi's Eden. All rights reserved</p>
+    <div class="flex gap-4">
+      <a aria-label="View facebook page" href="https://www.facebook.com/sabi.eden" rel="noreferrer" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" width="30" height="30" viewBox="0 0 24 24"
+          ><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path
+              d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"
+            /></g
+          ></svg
+        >
+      </a>
+      <a aria-label="View instagram page" href="https://www.instagram.com/sabi_eden/" rel="noreferrer" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" width="30" height="30" viewBox="0 0 24 24"
+          ><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none" /><rect
+              x="4"
+              y="4"
+              width="16"
+              height="16"
+              rx="4"
+            /><circle cx="12" cy="12" r="3" /><path d="M16.5 7.5v.001" /></g
+          ></svg
+        >
+      </a>
+    </div>
+  </div>
+</footer>
 
 <style>
   button {
     letter-spacing: 2px;
+  }
+  .farmer-image {
+    height: 80vh;
   }
 </style>
