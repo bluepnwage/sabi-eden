@@ -13,6 +13,7 @@
       description: "Consequat minim eiusmod nostrud non proident nisi ad ullamco occaecat nostrud."
     }
   ];
+  console.log(services[0]);
 </script>
 
 <div class="flex justify-around w-4/5 gap-10">
