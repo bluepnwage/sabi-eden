@@ -9,8 +9,8 @@
   const fruits = [lettuce, greenApples, pumpkins, carrots, blueberries, apples];
 </script>
 
-<div class="grid grid-cols-3 w-4/5 gap-5">
+<div class="grid grid-cols-6 lg:grid-cols-3 w-11/12 lg:w-4/5 gap-5">
   {#each fruits as fruit, index (index)}
-    <img decoding="async" loading="lazy" src={fruit} class="h-96 object-cover" alt="" />
+    <img decoding="async" loading="lazy" src={fruit} class="h-96 object-cover col-span-full lg:col-span-1" alt="" />
   {/each}
 </div>

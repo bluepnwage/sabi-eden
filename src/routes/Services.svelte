@@ -21,7 +21,7 @@
   ];
 </script>
 
-<div class="flex justify-around w-4/5 gap-10">
+<div class="flex flex-col lg:flex-row justify-around w-11/12 lg:w-4/5 gap-10">
   {#each services as service (service.title)}
     <div class="bg-gray-100 basis-1/3 px-4 py-8 space-y-10">
       <div class="h-20 w-20 bg-lime-700 flex justify-center items-center rounded-full">

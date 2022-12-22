@@ -22,9 +22,9 @@
   ];
 </script>
 
-<div class="grid grid-cols-3 w-5/6 gap-20">
+<div class="grid grid-cols-6 lg:grid-cols-3 w-11/12 lg:w-4/5  lg:gap-20">
   {#each products as product (product.title)}
-    <div class="bg-indigo-800 h-96 relative">
+    <div class="bg-indigo-800 w-full mb-36 lg:mb-0 lg:col-span-1 col-span-full h-96 relative">
       <img
         decoding="async"
         loading="lazy"
@@ -32,7 +32,7 @@
         alt=""
         class="absolute object-cover top-0 left-0 w-full h-full"
       />
-      <div class="absolute -bottom-20  left-7 w-[325px] p-7 bg-green-100 h-52">
+      <div class="absolute -bottom-20  lg:left-7 w-[325px] p-7 bg-green-100 h-52">
         <p class="text-gray-900 text-4xl capitalize mb-5 ">{product.title}</p>
         <p class="text-lg">{product.description}</p>
       </div>
